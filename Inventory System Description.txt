@@ -14,3 +14,8 @@ If the user chooses option 2, the program displays a table of the current invent
 and quantity of each item.
 
 If the user enters an invalid option, the program prints an error message and continues the loop.
+
+After each input, the program consumes any remaining input characters (such as a newline character) and continues
+the loop.
+
+Finally, the program closes the Scanner object to release system resources.
