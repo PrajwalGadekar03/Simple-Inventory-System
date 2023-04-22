@@ -1,0 +1,11 @@
+The program starts by printing a welcome message to the console.
+
+We then declare and initialize some variables to store information about the inventory items. We use three arrays (itemNames, itemPrices, and itemQuantities) to store the name, price, and quantity of each item, and an integer variable numItems to keep track of how many items are currently in the inventory.
+
+The program enters a while loop that continues indefinitely, prompting the user to choose an option. If the user enters "3", the program prints a goodbye message and exits the loop.
+
+If the user chooses option 1, the program prompts the user to enter information about the item (name, price, and quantity). The program then adds the item to the inventory arrays and increments numItems.
+
+If the user chooses option 2, the program displays a table of the current inventory, including the name, price, and quantity of each item.
+
+If the user enters an invalid option, the program prints an error message and continues the loop.
