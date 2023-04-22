@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Inventory {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Welcome to the inventory system!");
+        System.out.println("---------------------------------");
+        
+        int numItems = 0;
+        String[] itemNames = new String[100];
+        double[] itemPrices = new double[100];
+        int[] itemQuantities = new int[100];
+        
+        while (true) {
+            System.out.println("Please choose an option:");
+            System.out.println("1 - Add an item");
+            System.out.println("2 - View inventory");
+            System.out.println("3 - Quit");
+            
+            int choice = scanner.nextInt();
+            
+            if (choice == 1) {
+                scanner.nextLine(); // consume newline character
+                
+                System.out.print("Enter the name of the item: ");
+                String itemName = scanner.nextLine();
+                
+                System.out.print("Enter the price of the item: $");
+                double itemPrice = scanner.nextDouble();
+                
+                System.out.print("Enter the quantity of the item: ");
+                int itemQuantity = scanner.nextInt();
+                
+                itemNames[numItems] = itemName;
+                itemPrices[numItems] = itemPrice;
+                itemQuantities[numItems] = itemQuantity;
+                numItems++;
+                
+                System.out.println("Item added successfully!");
+            } else if (choice == 2) {
+                System.out.println("Inventory:");
+                System.out.println("---------------------------");
+                System.out.printf("%-20s %-10s %-10s\n", "Name", "Price", "Quantity");
+                
+                for (int i = 0; i < numItems; i++) {
+                    System.out.printf("%-20s $%-9.2f %-10d\n", itemNames[i], itemPrices[i], itemQuantities[i]);
+                }
+            } else if (choice == 3) {
+                System.out.println("Goodbye!");
+                break;
+            } else {
+                System.out.println("Invalid choice, try again");
+            }
+            
+            scanner.nextLine(); // consume newline character
+        }
+        
+        scanner.close();
+    }
+}
